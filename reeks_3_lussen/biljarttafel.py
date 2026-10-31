@@ -41,9 +41,12 @@ def shoot(board, lim_x, lim_y):
                 d_y = lim_y - cur_coor[1]
 
         cur_coor = [cur_coor[0] + x_dir * min(d_x, d_y), cur_coor[1] + y_dir * min(d_x, d_y)]
+        
         if in_hole(board, cur_coor):
             break
+
         print("{} ({}, {})".format(define_side(board, cur_coor), *cur_coor))
+    
     print("{} ({}, {})".format(define_hole(board, cur_coor), *cur_coor))
 
 y, x = int(input()), int(input())
